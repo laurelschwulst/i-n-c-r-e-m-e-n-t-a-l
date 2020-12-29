@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>i-n-c-r-e-m-e-n-t-a-l (for Kyle)</title>
+    <!-- 
+      long live gossips cafe
+      happy holidays 2020, kyle!
+    -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="i-n-c-r-e-m-e-n-t-a-l" />
+    <meta
+      name="twitter:description"
+      content="Files, photos, emails, websites, and experiments."
+    />
+    <meta name="twitter:image" content="rainbow.jpg" />
+    <link rel="shortcut icon" type="image/x-icon" href="cd.jpg" />
+    <style>
+      body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .cd {
+        position: absolute;
+        background-image: url("cd.png");
+        background-size: 100% 100%;
+        width: 165px;
+        height: 165px;
+
+        animation-name: swim-with-turning;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      @keyframes swim-with-turning {
+        0% {
+          left: 0;
+          transform: scaleX(1);
+        }
+        40% {
+          /* subtract the width of the cd so that it stops when it hits the edge */
+          left: calc(100vw - 165px);
+          transform: scaleX(1);
+        }
+        50% {
+          left: calc(100vw - 165px);
+          transform: scaleX(-1);
+        }
+        90% {
+          left: 0;
+          transform: scaleX(-1);
+        }
+        100% {
+          left: 0;
+          transform: scaleX(1);
+        }
+      }
+
+      .wrapper {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        background: linear-gradient(
+          124deg,
+          #ff2400,
+          #e81d1d,
+          #e8b71d,
+          #e3e81d,
+          #1de840,
+          #1ddde8,
+          #2b1de8,
+          #dd00f3,
+          #dd00f3
+        );
+        background-size: 1800% 1800%;
+
+        -webkit-animation: rainbow 64s ease infinite;
+        -z-animation: rainbow 64s ease infinite;
+        -o-animation: rainbow 64s ease infinite;
+        animation: rainbow 64s ease infinite;
+      }
+
+      @-webkit-keyframes rainbow {
+        0% {
+          background-position: 0% 82%;
+        }
+        50% {
+          background-position: 100% 19%;
+        }
+        100% {
+          background-position: 0% 82%;
+        }
+      }
+      @-moz-keyframes rainbow {
+        0% {
+          background-position: 0% 82%;
+        }
+        50% {
+          background-position: 100% 19%;
+        }
+        100% {
+          background-position: 0% 82%;
+        }
+      }
+      @-o-keyframes rainbow {
+        0% {
+          background-position: 0% 82%;
+        }
+        50% {
+          background-position: 100% 19%;
+        }
+        100% {
+          background-position: 0% 82%;
+        }
+      }
+      @keyframes rainbow {
+        0% {
+          background-position: 0% 82%;
+        }
+        50% {
+          background-position: 100% 19%;
+        }
+        100% {
+          background-position: 0% 82%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="cd" class="i"></div>
+      <div class="cd" class="n"></div>
+      <div class="cd" class="c"></div>
+      <div class="cd" class="r"></div>
+      <div class="cd" class="e"></div>
+      <div class="cd" class="m"></div>
+      <div class="cd" class="e"></div>
+      <div class="cd" class="n"></div>
+      <div class="cd" class="t"></div>
+      <div class="cd" class="a"></div>
+      <div class="cd" class="l"></div>
+    </div>
+    <script>
+      // get all the cd elements...
+      var cds = document.querySelectorAll(".cd");
+
+      // add randomness to each cd
+      for (var i = 0; i < cds.length; i++) {
+        var cd = cds[i];
+
+        // give the cd a random top value within the screen
+        cd.style["top"] =
+          (window.innerHeight - cd.clientHeight) * Math.random() + "px";
+
+        // start the swimming animation start at a random offset, from -0s to -14s
+        cd.style["animation-delay"] = -1 * Math.random() * 14 + "s";
+
+        // make the animation loop a random duration, from 10s to 18s
+        cd.style["animation-duration"] = 10 + Math.random() * 8 + "s";
+      }
+    </script>
+  </body>
+</html>
